@@ -1,0 +1,95 @@
+/* Estilos Específicos para a Galeria */
+.gallery {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título da Galeria */
+.gallery h2 {
+    color: #8B0000; /* Cor que você definiu */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Grid da Galeria */
+.gallery-grid {
+    display: grid;
+    /* Alterado para permitir que cada imagem ocupe mais espaço na largura, com um mínimo de 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 15px; /* Espaçamento que você definiu */
+}
+
+/* Imagens da Galeria */
+.gallery-grid img {
+    width: 100%;
+    /* Removi a altura fixa e vou deixar o "object-fit: cover" e o "width: 100%" cuidarem das proporções */
+    height: 250px; /* Mantive uma altura para que elas não fiquem excessivamente baixas */
+    object-fit: cover; /* Continua garantindo que a imagem preencha o espaço sem distorcer */
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+/* Efeito hover nas imagens */
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+/* Texto abaixo da galeria */
+.gallery p {
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Estilos para o lightbox (a janela que abre a imagem grande) */
+.lightbox {
+    display: none; /* Esconde a janela por padrão */
+    position: fixed; /* Fixa na tela, independente da rolagem */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Fundo preto transparente */
+    z-index: 1000; /* Garante que fique acima de todos os outros elementos */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mostra a janela quando a âncora é ativada na URL */
+.lightbox:target {
+    display: flex; /* Muda de 'none' para 'flex' para exibir */
+}
+
+/* Regras para a imagem grande dentro do lightbox */
+.lightbox img {
+    max-width: 90%; /* Limita a largura máxima da imagem grande */
+    max-height: 80%; /* Limita a altura máxima da imagem grande */
+    margin: auto;
+    display: block;
+    object-fit: contain; /* Ajusta a imagem para caber na janela sem cortar */
+}
+
+/* Botão para fechar a janela */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -1,0 +1,151 @@
+/* Estilos Específicos para a Página de Catálogo de Vidros */
+
+/* Geral */
+.catalog-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.catalog-section h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.catalog-section .intro-text {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Grid de Produtos */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
+    gap: 30px; /* Espaçamento entre cards */
+    justify-items: center; /* Centraliza os cards dentro de cada célula */
+}
+
+/* Cartão do Produto */
+.catalog-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: left;
+    width: 100%;
+    max-width: 350px; /* Limita o tamanho do card */
+}
+
+.catalog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagens dentro dos cards */
+.catalog-card img {
+    width: 100%;
+    height: 350px; /* Altura fixa para as miniaturas no catálogo */
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+}
+
+.catalog-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    padding: 15px 15px 5px;
+}
+
+.catalog-card p {
+    font-size: 0.95em;
+    color: #555;
+    padding: 0 15px 10px;
+    line-height: 1.5;
+}
+
+.product-info {
+    padding: 15px;
+    background-color: #eee;
+    border-top: 1px solid #ddd;
+}
+
+.product-info span {
+    font-weight: bold;
+    color: #444;
+}
+
+.product-info ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 5px;
+}
+
+.product-info li {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+/* Estilos para o LIGHTBOX (janela que mostra a imagem grande ao clicar) */
+.lightbox {
+    display: none; /* Esconde a janela por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Fundo preto transparente */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mostra a janela quando a âncora é ativada na URL */
+.lightbox:target {
+    display: flex; /* Exibe o lightbox */
+}
+
+/* Imagem grande dentro do lightbox */
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    margin: auto;
+    display: block;
+    object-fit: contain; /* Ajusta a imagem para caber sem cortar */
+}
+
+/* Botão para fechar a janela */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards por linha */
+    }
+}
+
+@media (max-width: 600px) {
+    .catalog-grid {
+        grid-template-columns: 1fr; /* 1 card por linha */
+    }
+}

@@ -1,0 +1,46 @@
+/* Título da Seção de Serviços */
+.services h2 {
+  color: #8B0000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Container dos serviços */
+.service-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Cada serviço individual */
+.service-item {
+  width: 250px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+/* Ícones dos serviços */
+.service-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: cover; /* mantém proporção e corta excesso */
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto 10px; /* centraliza e dá espaço abaixo da imagem */
+}
+
+/* Títulos dos serviços */
+.service-item h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+/* Descrição dos serviços */
+.service-item p {
+  font-size: 14px;
+  color: #555;
+}

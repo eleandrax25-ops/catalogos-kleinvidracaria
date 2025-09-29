@@ -1,0 +1,138 @@
+/* Estilos Específicos para a Página de Catálogo de Portas */
+
+/* Geral */
+.catalog-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.catalog-section h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.catalog-section .intro-text {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Grid de Produtos */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Cartão do Produto */
+.catalog-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: left;
+}
+
+.catalog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ATENÇÃO: Estas são as regras para as IMAGENS DENTRO DOS CARDS. */
+/* Elas foram mantidas sem a interferência das regras do lightbox. */
+.catalog-card img {
+    width: 100%;
+    height: 350px; /* Altura fixa para as miniaturas no catálogo */
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+}
+
+.catalog-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    padding: 15px 15px 5px;
+}
+
+.catalog-card p {
+    font-size: 0.95em;
+    color: #555;
+    padding: 0 15px 10px;
+    line-height: 1.5;
+}
+
+.product-info {
+    padding: 15px;
+    background-color: #eee;
+    border-top: 1px solid #ddd;
+}
+
+.product-info span {
+    font-weight: bold;
+    color: #444;
+}
+
+.product-info ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 5px;
+}
+
+.product-info li {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+
+/* Estilos para o LIGHTBOX (janela que mostra a imagem grande ao clicar) */
+.lightbox {
+    display: none; /* Esconde a janela por padrão */
+    position: fixed; /* Fixa na tela, independente da rolagem */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Fundo preto transparente */
+    z-index: 1000; /* Garante que fique acima de todos os outros elementos */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mostra a janela quando a âncora é ativada na URL */
+.lightbox:target {
+    display: flex; /* Muda de 'none' para 'flex' para exibir */
+}
+
+/* ATENÇÃO: Estas são as regras para a IMAGEM GRANDE DENTRO DO LIGHTBOX. */
+/* Elas são específicas e não afetam as imagens dos cards. */
+.lightbox img {
+    max-width: 90%; /* Limita a largura máxima da imagem grande */
+    max-height: 80%; /* Limita a altura máxima da imagem grande */
+    margin: auto;
+    display: block;
+    object-fit: contain; /* Ajusta a imagem para caber na janela sem cortar */
+}
+
+/* Botão para fechar a janela */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}

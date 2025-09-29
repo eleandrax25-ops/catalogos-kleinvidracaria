@@ -1,0 +1,26 @@
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+  background-color: #333;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), #333;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  background: rgba(0,0,0,0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: 18px;
+}
